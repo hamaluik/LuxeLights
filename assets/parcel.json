@@ -1,0 +1,12 @@
+{
+    "textures" : [
+        { "id" : "assets/level.png" },
+        { "id" : "assets/light.png" },
+        { "id" : "assets/occlusion_solid.png" },
+        { "id" : "assets/occlusion_rims.png" },
+        { "id" : "assets/occlusion_gradient.png" }
+    ],
+    "shaders" : [
+        { "ps_id":"assets/light.glsl" }
+    ]
+}

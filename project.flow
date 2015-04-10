@@ -1,0 +1,37 @@
+{
+
+  luxe:{
+    window: {
+      width:960,
+      height:640,
+      title:'Lights',
+      fullscreen:false,
+      resizable:true,
+      borderless:false
+    }
+  },
+
+  project : {
+    name : 'Luxe Lights',
+    version : '0.0.1',
+    author : 'FuzzyWuzzie',
+
+    app : {
+      name : 'LuxeLights',
+      package : 'com.blazingmammothgames.luxe'
+    },
+
+    build : {
+      dependencies : {
+        luxe : '*',
+      }
+    },
+
+    files : {
+      assets : 'assets/',
+      index : { path:'custom_index.html => index.html', template:'project', not_listed:true }
+    }
+
+  }
+
+}
