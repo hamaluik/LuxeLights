@@ -117,22 +117,19 @@ class Main extends luxe.Game {
 			batcher: lightBatcher
 		});
 
-		// load the light shader
-		Luxe.loadShader('assets/light.glsl', 'default', function(shader:Shader) {
-			// store the shader
-			lightShader = shader;
-			levelSprite.shader = lightShader;
+		// setup the light shader
+		lightShader = Luxe.resources.find_shader('assets/light.glsl|default');
+		levelSprite.shader = lightShader;
 
-			// set the ambient colour
-			lightShader.set_vector4('ambientColor', ambientColor);
+		// set the ambient colour
+		lightShader.set_vector4('ambientColor', ambientColor);
 
-			// and the resolution (for lightmap texture lookup)
-			lightShader.set_vector2('resolution', new Vector(1024, 1024));
+		// and the resolution (for lightmap texture lookup)
+		lightShader.set_vector2('resolution', new Vector(1024, 1024));
 
-			// move to the second slot
-			lightRenderTexture.slot = 1;
-			lightShader.set_texture('lightMap', lightRenderTexture);
-		});
+		// move to the second slot
+		lightRenderTexture.slot = 1;
+		lightShader.set_texture('lightMap', lightRenderTexture);
 	}
 
 	override function onkeyup( e:KeyEvent ) {
